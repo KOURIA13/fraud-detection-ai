@@ -72,7 +72,7 @@ The system is optimized to balance fraud detection and operational workload.
 ## 🏪 Use Case
 
 Designed for:
-- Retail stores (e.g. Decathlon-like environments)
+- Retail stores 
 - Self-checkout systems
 - Loss prevention teams
 - Payment / transaction monitoring systems
