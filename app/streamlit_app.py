@@ -1,5 +1,9 @@
-import streamlit as st
+#!/opt/miniconda3/bin/python
+from __future__ import annotations
+
 import pandas as pd
+import streamlit as st
+
 
 st.set_page_config(page_title="Fraud Detection Dashboard", layout="wide")
 
@@ -25,7 +29,7 @@ if risk != "All":
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Transactions", len(filtered))
 col2.metric("Alertes", int(filtered["final_flag"].sum()))
-col3.metric("Score moyen", round(filtered["final_risk_score"].mean(), 2))
+col3.metric("Score moyen", round(filtered["final_risk_score"].mean(), 2) if len(filtered) > 0 else 0.0)
 col4.metric("Caisses uniques", filtered["checkout_id"].nunique())
 
 st.subheader("📊 Répartition des niveaux de risque")
@@ -50,7 +54,7 @@ cols = [
 ]
 st.dataframe(
     filtered.sort_values("final_risk_score", ascending=False)[cols].head(50),
-    use_container_width=True
+    use_container_width=True,
 )
 
 st.subheader("🏪 Caisses les plus souvent alertées")
