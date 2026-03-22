@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # 🚨 AI Fraud Detection for Retail Self-Checkout
 
 ## 📌 Overview
